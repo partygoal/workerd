@@ -25,15 +25,15 @@ jobs:
     name: test (${{ matrix.os-name }})
     steps:
       - uses: actions/checkout@v3
-      - name: Cache
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: ~/bazel-disk-cache
-          key: bazel-disk-cache-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.bazelversion', '.bazelrc', 'WORKSPACE') }}
-          # Intentionally not reusing an older cache entry using a key prefix, bazel frequently
-          # ends up with a larger cache at the end when starting with an available cache entry,
-          # resulting in a snowballing cache size and cache download/upload times.
+      # - name: Cache
+      #   id: cache
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/bazel-disk-cache
+      #     key: bazel-disk-cache-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.bazelversion', '.bazelrc', 'WORKSPACE') }}
+      #     # Intentionally not reusing an older cache entry using a key prefix, bazel frequently
+      #     # ends up with a larger cache at the end when starting with an available cache entry,
+      #     # resulting in a snowballing cache size and cache download/upload times.
       - name: Setup Linux
         if: runner.os == 'Linux'
         # Install dependencies, including clang via through LLVM APT repository. Note that this
