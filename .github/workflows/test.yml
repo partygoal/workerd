@@ -12,7 +12,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-20.04-64core, macos-latest, windows-2022-32core]
+        os: [ubuntu-20.04-64core, macos-latest-xlarge, windows-2022-32core]
         include:
           - os-name: linux
             os: ubuntu-20.04-64core
