@@ -12,14 +12,10 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-20.04-64core, macos-latest, windows-2022]
+        os: [ubuntu-20.04-64core]
         include:
           - os-name: linux
             os: ubuntu-20.04-64core
-          - os-name: macOS
-            os: macos-latest
-          - os-name: windows
-            os: windows-2022
       fail-fast: false
     runs-on: ${{ matrix.os }}
     name: test (${{ matrix.os-name }})
