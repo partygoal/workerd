@@ -2,6 +2,8 @@
 
 ![Banner](/docs/assets/banner.png)
 
+foo
+
 `workerd` (pronounced: "worker-dee") is a JavaScript / Wasm server runtime based on the same code that powers [Cloudflare Workers](https://workers.dev).
 
 You might use it:
